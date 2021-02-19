@@ -34,6 +34,7 @@ if(isset($_POST['SUBMIT'])){
 
     //$pass = password_hash($password,PASSWORD_BCRYPT);
     //$cpass = password_hash($cpassword,PASSWORD_DEFAULT)
+    $token = bin2hex(random_bytes(15));
    $emailquery = "SELECT * FROM form where email = '$email'";
    $query = mysqli_query($con , $emailquery);
 
@@ -48,8 +49,8 @@ if(isset($_POST['SUBMIT'])){
     else{
         if($password == $cpassword){
             
-             $sql = "INSERT INTO form ( `rnumber` , `first name`, `last name`, `father's name`, `mother's name`, `date of birth`, `gender`, `phone number`, `email`, `mother's phone number`, `father's phone number`, `college name`, `graduation year`, `address`, `password` , `cpassword`, `dd`) 
-             VALUES ( '$rnumber', '$name', '$lastname', '$name2', '$name3', '$dateofbirth', '$gender', '$number', '$email', '$number1', '$number2', '$collegename', '$year', '$address', '$password', '$cpassword', CURRENT_TIMESTAMP())";
+             $sql = "INSERT INTO form ( `rnumber` , `first name`, `last name`, `fathers name`, `mothers name`, `date of birth`, `gender`, `phone number`, `email`, `mothers phone number`, `fathers phone number`, `college name`, `graduation year`, `address`, `password` , `cpassword`,`token`, `dd`) 
+             VALUES ( '$rnumber', '$name', '$lastname', '$name2', '$name3', '$dateofbirth', '$gender', '$number', '$email', '$number1', '$number2', '$collegename', '$year', '$address', '$password', '$cpassword', '$token', CURRENT_TIMESTAMP())";
              $iquery = mysqli_query($con , $sql);
             // $_SESSION['name'] = "$name";
           //   $_SESSION['lastname'] = "$lastname";     

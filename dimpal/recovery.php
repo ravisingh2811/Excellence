@@ -1,3 +1,43 @@
+<?php
+
+session_start();
+include "index.php";
+if(isset($_POST['SUBMIT'])){
+
+    $email=mysqli_real_escape_string($con,$_POST['email']);
+
+    $emailquery = "SELECT * FROM form where email = '$email'";
+    $query = mysqli_query($con , $emailquery);
+ 
+    $emailcount =mysqli_num_rows($query);
+   if($emailcount>0){
+       $userdata = mysqli_fetch_assoc($query);
+       $username = $userdata['first name'];
+
+       $token = $userdata['token'];
+
+       $subject = "Password Recovery";
+       $body = "Hi, $username. Click here to reset your password
+       http://localhost/dimpal/reset_password.php?token=$token";
+       $sender_email = "From: kinetic2811@gmail.com";
+       if(mail($email , $subject , $body , $sender_email )){
+           echo "check your mail to reset your password $email";
+
+       }
+       else {
+           echo "email sending fail.... ";
+       }
+
+   } else {
+       echo "invald email";
+   }
+
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +49,9 @@
 </head>
 <body>
 <form  method="POST" action = "<?php echo htmlentities($_SERVER['PHP_SELF']);?>">
-        <div class="forget-box" style = "max-width: 100%;
+        <div class="forget-box" style = "max-width: 24%;
                                        height: 50%;
-                                       top: 50%;
+                                       top: 42%;
                                        left: 50%;
                                        position: absolute;
                                        transform: translate(-50% , -50%);

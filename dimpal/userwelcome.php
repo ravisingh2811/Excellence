@@ -8,8 +8,7 @@ include "index.php";
 
 
 //$email = $get2['email'];
-//$_SESSION = $get2['name2'];
-
+//$_SESSION = $get2['name2';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +25,8 @@ include "index.php";
         <div class="logo"> <img src="img/logo[578].jpeg" alt="logo">
           <p class="name">Excellence</p>
         </div>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="userwelcome.php">profile</a></li>
+        <li><a href="userwelcome.php">Home</a></li>
+        <li><a href="profile.php">profile</a></li>
         <li> <a href="logout.php">Logout</a></li>
       
     </ul>
@@ -43,66 +42,10 @@ include "index.php";
         <H2>Your Application Number Is:<H2>
         <?php
           echo $_SESSION["rnumber"];
-          //echo $get2['name2'];
-          echo $_SESSION['name2'];
-
-
         ?>
-    </div>    
+  </div>    
 
-    <div class="profile"  style = "font-size : 20px;">
-      <div class="header">
-       <H1>Personal details<H1>
-      </div>
-      <div class="details" >
-        <?php
-          echo $_SESSION['name'];
-          ?>
-        <strong>Last Name:</strong><?php
-          echo $_SESSION["lastname"];
-          ?><br>
-        <strong>Father's Name:</strong><?php
-            echo $_SESSION['name2'];
-          ?><br>
-        <strong>Mother's Name:</strong><?php
-          echo $_SESSION['name3'];
-          ?><br>
-        <strong>Date of birth:</strong><?php
-          echo $_SESSION['dateofbirth'];
-          ?><br>
-        <strong>Gender:</strong><?php
-          echo $_SESSION['gender'];
-          ?><br>
-        <div class="header">
-          <H1>Contact details<H1>
-        </div>
-         <strong>Phone Number:</strong><?php
-          echo $_SESSION['number'];
-            ?><br>
-           <strong>Email:</strong><?php
-          echo $_SESSION['email'];
-           ?><br>
-          <strong>Father's Phone Number:</strong><?php
-          echo $_SESSION['number2'];
-          ?><br>
-          <strong>Mother's Phone Number:</strong><?php
-           echo $_SESSION['number3'];
-             ?><br>
-          <strong>College Name/University Name:</strong><?php
-            echo $_SESSION['collegename'];
-             ?><br>
-          <strong>Graduation year:</strong><?php
-            echo  $_SESSION['year'];
-             ?><br>
-          <strong>Address:</strong><?php
-           echo $_SESSION['address'];
-             ?><br>
-      </div>
-
-         
-
-
-    </div>
+    
 
 
 </body>

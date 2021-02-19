@@ -19,11 +19,11 @@ session_start();
    if($_SERVER["REQUEST_METHOD"] == "POST"){
      
       // $email = $_POST['email'];
-     // $_SESSION['rnumber'] = $_POST['rnumber'];
+      $_SESSION['rnumber'] = $_POST['rnumber'];
        $rnumber = $_POST['rnumber'];
        $password= $_POST['password'];
 
-       $sql = "SELECT *FROM form WHERE rnumber = '$rnumber' AND password = '$password'";
+       $sql = "SELECT * FROM form WHERE rnumber = $rnumber AND password = '$password'";
 
        $query = mysqli_query($con , $sql);
 
@@ -33,21 +33,21 @@ session_start();
            $email_pass = mysqli_fetch_array($query);
          // $_SESSION['id']= $email_pass['id'];
            $_SESSION['rnumber'] = $email_pass['rnumber'];
-           $_SESSION['name'] = $email_pass['name'];
+           $_SESSION['name'] = $email_pass['first name'];
           
-           $_SESSION["lastname"] = $email_pass['latname'];
-           $_SESSION['name2'] = $email_pass['name2'];
-           $_SESSION["name3"] = $email_pass['name3'];
-           $_SESSION["dateofbirth"] = $email_pass['dateofbirth'];
+           $_SESSION["lastname"] = $email_pass['last name'];
+           $_SESSION['name2'] = $email_pass['fathers name'];
+           $_SESSION["name3"] = $email_pass['mothers name'];
+           $_SESSION["dateofbirth"] = $email_pass['date of birth'];
            $_SESSION["gender"] = $email_pass['gender'];
-           $_SESSION["number"] = $email_pass['number'];
+           $_SESSION["number"] = $email_pass['phone number'];
            $_SESSION["email"] = $email_pass['email'];
-           $_SESSION["number2"] = $email_pass['number2'];
-           $_SESSION["number3"] = $email_pass['number3'];
-           $_SESSION["collegename"] = $email_pass['collegename'];
-           $_SESSION["year"] = $email_pass['year'];
+           $_SESSION["number2"] = $email_pass['fathers phone number'];
+           $_SESSION["number3"] = $email_pass['mothers phone number'];
+           $_SESSION["collegename"] = $email_pass['college name'];
+           $_SESSION["year"] = $email_pass['graduation year'];
 
-           $_SESSION["address"] = $email_pass['addresse'];
+           $_SESSION["address"] = $email_pass['address'];
            header ("location: userwelcome.php");
        }
        else{

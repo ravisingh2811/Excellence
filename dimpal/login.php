@@ -73,7 +73,7 @@ session_start();
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact Us</a></li>
-            <li><a href="login.php">Login</a></li>
+            <li><a href="admin_login.php">Admin Login</a></li>
             <li><a href="signup.php">Sign Up</a></li>
         </ul>
     </nav>

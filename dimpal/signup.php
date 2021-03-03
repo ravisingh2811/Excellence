@@ -77,15 +77,23 @@ if(isset($_POST['SUBMIT'])){
               // $_SESSION['dateofbirth'] = "$dateofbirth";
               // $_SESSION['gender'] = "$gender";
               // $_SESSION['number'] = "$number";
-              // $_SESSION['email'] = "$email";
+               $_SESSION['email'] = "$email";
               // $_SESSION['number1'] = "$number1";
               // $_SESSION['number2'] = "$number2";
               // $_SESSION['college'] = "$collegename";
               // $_SESSION['year'] = "$year";
               // $_SESSION['address'] = "$address";
-                      
+                      $subject = "Email Verification";
+                      $body = "Hi , $name. Please click here to verify your email and know <br>your applocation number
+                      http://localhost/dimpal/welcome.php";
+                      $headers = "From: kinetic2811@gmail.com";
+                      if(mail($email , $subject , $body , $headers)){
+                          echo "email send";
+                      }else {
+                          echo "email sending failed";
+                      }
     
-                        header("location: welcome.php");
+                        header("location: email_verfiy.php");
                        die;
 
                    }

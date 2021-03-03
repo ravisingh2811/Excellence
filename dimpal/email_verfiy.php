@@ -1,11 +1,6 @@
 <?php
 session_start();
-
 ?>
-
-
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,7 +10,7 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <l<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>verfiy email</title>
 </head>
 <body>
     <nav class="navbar background h-nav-resp">
@@ -38,17 +33,13 @@ session_start();
                                     padding-left:35%;
                                     padding-top:50px;
                                     margin-top:30px;">
-        <H2>Thank you Your email has been activated<br>
-        Your application number is<br>
+        <H2>Thank you for Submitting the form<br>
+        
+        Check you email, a verification link is send to your email<br>
         <?php
-        //$rnumber = rand();
-        //echo $rnumber;
-          echo $_SESSION["rnumber"];
+          echo $_SESSION["email"];
 
         ?>
-    
-        </H2>
-        <a  href = "login.php">Click to login</a>
     </div>
 
 </body>
